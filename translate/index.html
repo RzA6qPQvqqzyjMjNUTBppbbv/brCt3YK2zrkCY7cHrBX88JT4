@@ -1,0 +1,194 @@
+<html>
+  <head>
+    <script type="text/javascript" src="../translate/tabs.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="useful tools for smart people!" />
+    <meta
+      name="keywords"
+      content="Translate,useful,tools,randomtools,random tools,Translatetools"
+    />
+    <meta name="author" content="Hunterr#7991" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Random Tools" property="og:title" />
+    <meta content="Useful tools for smart people!" property="og:description" />
+    <meta content="https://randomtools.sytes.net/" property="og:url" />
+    <meta content="https://embed.com/embedimage.png" property="og:image" />
+    <meta content="#010101" data-react-helmet="true" name="theme-color" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Shizuru&display=swap");
+      .title {
+        font-family: "Shizuru", cursive;
+        font-size: 100px;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+      }
+      .button-9 {
+        appearance: button;
+        backface-visibility: hidden;
+        background-color: #405cf5;
+        border-radius: 6px;
+        border-width: 0;
+        box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+          rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto,
+          "Helvetica Neue", Ubuntu, sans-serif;
+        font-size: 16px;
+        height: 44px;
+        line-height: 1.15;
+        margin: 12px 0 0;
+        outline: none;
+        overflow: hidden;
+        padding: 0 25px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transform: translateZ(0);
+        transition: all 0.2s, box-shadow 0.08s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 200px;
+      }
+      .inputtext {
+        background-color: #fff;
+        border-radius: 6px;
+        border-width: 1;
+        border-color: #405cf5;
+        color: #405cf5;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto,
+          "Helvetica Neue", Ubuntu, sans-serif;
+        font-size: 16px;
+        height: 44px;
+        line-height: 1.15;
+        outline: none;
+        margin: 12px 0 0;
+        overflow: hidden;
+        padding: 0 25px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transform: translateZ(0);
+        transition: all 0.2s, box-shadow 0.08s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 200px;
+      }
+      .inputtext2 {
+        background-color: #fff;
+        border-radius: 6px;
+        border-width: 1;
+        border-color: #405cf5;
+        color: #405cf5;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto,
+          "Helvetica Neue", Ubuntu, sans-serif;
+        font-size: 16px;
+        height: 44px;
+        line-height: 1.15;
+        margin: 12px 0 0;
+        overflow: hidden;
+        padding: 0 25px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transform: translateZ(0);
+        transition: all 0.2s, box-shadow 0.08s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 200px;
+        outline: none;
+        display: none;
+      }
+      .button-9:disabled {
+        cursor: default;
+      }
+
+      .button-9:focus {
+        box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+          rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+          rgba(50, 151, 211, 0.3) 0 0 0 4px;
+      }
+      .divinline {
+        display: inline;
+      }
+      .textareacustom {
+        font-size: 20px;
+        font-family: "Nunito", sans-serif;
+        resize: none;
+        outline: none;
+         border-width: 1;
+        transition: 1s;
+      }
+      .textareacustom:hover {
+        opacity: 70%;
+        background-color: #F1F1F1;
+      }      
+    </style>
+  </head>
+  <body>
+    <center>
+      <div class="title">Translator</div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <textarea
+        id="TextTranslate"
+        name="Text"
+        rows="15"
+        cols="50"
+        class="textareacustom"
+        placeholder="Text..."
+        autofocus
+        autocomplete="off"
+      ></textarea>
+      <textarea
+        id="Textasd"
+        name="Text"
+        rows="15"
+        cols="50"
+        class="textareacustom"
+        placeholder="Result..."
+        readonly
+        autofocus
+        autocomplete="off"
+      ></textarea>
+      <br />
+      <br /><br />
+      <div class="divinline">
+        <button class="button-9" onclick="clicker()">Translate</button>
+        <select
+          id="userInput"
+          name="language"
+          class="inputtext"
+          autocomplete="off"
+          onclick="selectlan()"
+        >
+          <option value="nothing" disabled selected>
+            Select your language
+          </option>
+          <option value="french">French</option>
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="italian">Italian</option>
+          <option value="other">Other</option>
+        </select>
+        <input
+          placeholder="Language..."
+          id="customlanguage"
+          class="inputtext2"
+          autocomplete="off"
+        />
+      </div>
+    </center>
+  </body>
+</html>

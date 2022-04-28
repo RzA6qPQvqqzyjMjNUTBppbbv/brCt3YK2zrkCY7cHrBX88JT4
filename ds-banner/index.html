@@ -1,0 +1,99 @@
+<html>
+<head>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta content="Random Tools" property="og:title" />
+    <meta content="Useful tools for smart people! 
+    Website made by Hunter
+" property="og:description" />
+    <meta content="https://randomtools.sytes.net/" property="og:url" />
+    <meta content="https://media.discordapp.net/attachments/889282249441296395/916400515640868874/MiscBlack.png" property="og:image" />
+    <meta content="#010101" data-react-helmet="true" name="theme-color" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+    .buttondownload{
+    display: none;
+    width: 180px;
+      height: 40px;
+      background-color: rgb(71, 98, 221);
+      border: 0px;
+      border-radius: 5px;
+      font-size: 17px;
+      font-family: 'Source Sans Pro', sans-serif;
+      color: #FFF;
+      box-shadow: 0px 0px 4px 0px #868686;
+      transition: .4s;
+    }
+    .buttondownload:hover{
+      opacity: 0.83;
+      box-shadow: 0px 0px 12px 0px #868686;
+    }
+    body{
+    background-color: rgb(43, 43, 43);
+    }
+    .button{
+      width: 180px;
+      height: 40px;
+      background-color: rgb(71, 98, 221);
+      border: 0px;
+      border-radius: 5px;
+      font-size: 17px;
+      font-family: 'Source Sans Pro', sans-serif;
+      color: #FFF;
+      box-shadow: 0px 0px 4px 0px #868686;
+      transition: .4s;
+    }
+    .button:hover{
+      opacity: 0.83;
+      box-shadow: 0px 0px 12px 0px #868686;
+    }
+    .input1{
+      width: 250px;
+      height: 40px;
+      background-color: #FFF;
+      border: 0px;
+      border-radius: 5px;
+      font-size: 17px;
+      outline: none;
+      font-family: 'Source Sans Pro', sans-serif;
+      color: rgb(71, 98, 221);
+      box-shadow: 0px 0px 4px 0px #868686;
+      transition: .4s;
+    }
+    </style>
+</head>
+<body>
+  <center>
+    <br>
+    <br>
+
+    <input placeholder="User id..." id="useridxd" autocomplete="off" class="input1">  &nbsp &nbsp<button onclick="fetchimage()" class="button">Get avatar</button><br><br><br><br>
+    <img id="useravatar" width="30%" height="auto" style="border-radius:8px;">
+    <br><br>
+    <a id="downloadlink" href=""  target="_blank"><button id="buttondownload" class="buttondownload"> Download </button></a>
+    </center>
+    
+    <script>
+    
+    function fetchimage() {
+      var userid = document.getElementById("useridxd").value;
+      if(!userid) return;
+      
+
+        fetch(`https://japi.rest/discord/v1/user/${userid}/banner?animated=true&size=4096`).then(response =>{ 
+            document.getElementById("useravatar").src = response.url 
+            document.getElementById("downloadlink").href = response.url
+            document.getElementById("buttondownload").style.display = "inline"
+
+
+
+    })
+}
+
+    
+
+    
+    
+    </script>
+</body>
+</html>
+

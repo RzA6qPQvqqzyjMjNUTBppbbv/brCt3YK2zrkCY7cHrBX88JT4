@@ -14,7 +14,7 @@ function clicker() {
     if (!text) return;
     if (!language) return;
     fetch(
-      `https://hunterapi.sytes.net/translate/${language}/${text}`
+      `https://hunterapi.sytes.net/translate?language=${language}&text=${text}`
     )
       .then((res) => res.json())
       .then(async (json) => {

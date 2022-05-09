@@ -46,4 +46,11 @@ async function fetchuser() {
         banner = asd.data.bannerURL + "?size=4096"
     }
     document.getElementById("banner").src = banner;
+
+    let accounts = asd.connections
+    let linked = "";
+    for (let i = 0; i < accounts.length; i++) {
+    linked += `<a href=\"${asd.connections[i].url}\" target="_blank"><button class="button2">${asd.connections[i].type}</button></a> ` 
+    }
+    document.getElementById("connections").innerHTML = linked;
 }

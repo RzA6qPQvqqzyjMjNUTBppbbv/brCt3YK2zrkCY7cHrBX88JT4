@@ -26,9 +26,10 @@ textarea{
 	flex-direction: row;
 }
 .profilecard {
+	height: 567px;
 	width: 450px;
 	margin: 30px auto 0 auto;
-	border-radius: 4px;
+	border-radius: 20px;
 	border: 1px solid #23262a;
 	background: #2f3136;
 	flex-direction: column;
@@ -42,6 +43,7 @@ textarea{
 	align-items: center;
 	background: #202225;
 	color: #fff;
+	border-radius: 20px;
 }
 
 .profilecard .me .avatar {
@@ -60,7 +62,7 @@ textarea{
 }
 .banner img{
 	width: 97%;
-	height: 40%;
+	height: 20%;
 	object-fit: cover;
 	z-index: -100px;
 	border-radius: 10px;
@@ -92,6 +94,20 @@ textarea{
     .button:hover{
       cursor: pointer;
     }
+	.button2{
+	  margin-left: 10px;
+      background-color: transparent;
+      border: 1px;
+	  border: 1px solid #8a8a8a;
+	  border-radius: 4px;
+	  padding: 8px;
+      font-size: 17px;
+      font-family: 'Source Sans Pro', sans-serif;
+      color: rgb(151, 151, 151);
+    }
+    .button2:hover{
+      cursor: pointer;
+    }
     .input1{
       width: 250px;
       height: 40px;
@@ -112,7 +128,7 @@ textarea{
 
 <center>
 	<br><br><br><br>
-	<input id="userid" class="input1" placeholder="Enter any id"><button class="button" onclick="fetchuser()">Enter</button>
+	<input id="userid" class="input1" placeholder="Enter user id"><button class="button" onclick="fetchuser()">Enter</button>
     <div class="content" id="content">
 		<div class="profilecard" >
 			<div class="me">
@@ -135,7 +151,9 @@ textarea{
 				<div id="created"></div><br>
 				<div id="bio"></div>
 				<br><br>
+				<div id="connections"></div>
 			</div>
+			
 		</div>
 	</div>
 

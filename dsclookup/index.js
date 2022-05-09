@@ -1,9 +1,11 @@
 async function fetchuser() {
     const id = document.getElementById("userid").value;
     const asd = await fetch(`https://japi.rest/discord/v1/user/${id}`).then(res => res.json())
-
+    if(!asd.data) return;
+    if(!asd.data.username) return;
     document.getElementById("content").style.display = "flex";
     document.getElementById("username").textContent = asd.data.tag;
+    document.getElementById("created").textContent = "Created at: " + asd.data.createdAt;
     document.getElementById("bio").textContent = asd.data.bio || ``;
     let text = asd.data.public_flags_array.join(` `)
     text = text.replace("NITRO", "<img src=\"https://media.discordapp.net/attachments/889282249441296395/972928999846191194/2937-discord-nitro.png\" height=\"20px\">")

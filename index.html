@@ -1,5 +1,7 @@
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script type="text/javascript" src="/index.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta content="Random Tools" property="og:title" />
     <meta content="Useful tools for smart people! 
@@ -9,26 +11,57 @@
     <meta content="https://media.discordapp.net/attachments/889282249441296395/916400515640868874/MiscBlack.png" property="og:image" />
     <meta content="#010101" data-react-helmet="true" name="theme-color" />
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap');
       @import url("https://fonts.googleapis.com/css2?family=Shizuru&display=swap");
       .title {
-        font-family: "Shizuru", cursive;
+        font-family: 'Oxygen', sans-serif;
         font-size: 100px;
+        color: rgb(46, 46, 49);
+        animation: myAnim 1s ease 0s 1 normal forwards;
       }
+      @keyframes myAnim {
+	0% {
+		transform: scale(0);
+	}
 
+	100% {
+		transform: scale(1);
+	}
+}
+
+      body{
+        background-color: #FFF;
+        transition: .3s;
+      }
+      .buttontheme{
+        background-color: #5f5f5f;
+        border-radius: 40px;
+        border-width: 0;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-family: 'Oxygen', sans-serif;
+        font-size: 20px;
+        height: 60px;
+        margin: 12px 0 0;
+        padding: 0 25px;
+        position: relative;
+        margin-left: 30px;
+        transition:.4s;
+      }
+      .buttontheme:hover{
+        background-color: #797979;
+      }
       .button-9 {
         appearance: button;
         backface-visibility: hidden;
-        background-color: #405cf5;
+        background-color: #2054e6;
         border-radius: 6px;
         border-width: 0;
-        box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
-          rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
-        box-sizing: border-box;
-        color: #fff;
+        color: rgb(255, 255, 255);
         cursor: pointer;
         font-family: -apple-system, system-ui, "Segoe UI", Roboto,
           "Helvetica Neue", Ubuntu, sans-serif;
-        font-size: 16px;
+        font-size: 15px;
         height: 44px;
         line-height: 1.15;
         margin: 12px 0 0;
@@ -43,7 +76,8 @@
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
-        width: 200px;
+        width: 250px;
+        transition:.4s;
       }
 
       .button-9:disabled {
@@ -58,30 +92,30 @@
       .divinline {
         display: inline;
       }
+      
     </style>
-    <title>Random Tools | Home </title>
+    <title> RandomTools | Home </title>
   </head>
   <body>
+    <button id="theme" class="buttontheme" onclick="theme()"><i class="fa-solid fa-bolt"></i></button>
     <center>
-      <div class="title">Random Tools</div>
+      
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="title" id="title">Random Tools</div>
       <br />
       <br />
       <br />
       <br />
       <br />
-            <div class="divinline">
-        <a href="/dsclookup"> <button class="button-9">Discord Lookup</button></a>
-
-        
-      </div>
-
+      <a href="/dsclookup"> <button class="button-9"> Discord Lookup &nbsp&nbsp<i class="fa-brands fa-discord"></i></button></a><br><br><br>
       <div class="divinline">
-        <a href="/translate"> <button class="button-9">Translator</button></a>
-        <a href="/html"> <button class="button-9">Live Html Editor</button></a>
-         <a href="/ds-avatar"> <button class="button-9">Get a discord avatar</button></a>
-        <a href="/ds-banner"> <button class="button-9">Get a discord banner</button></a>
-        <a href="https://hubitools.sytes.net" target="_blank"><button class="button-9">Other tools</button></a
-        >
+        <a href="/translate"> <button class="button-9">Translator &nbsp&nbsp<i class="fa-solid fa-earth-americas"></i></button></a>
+        <a href="/html"> <button class="button-9">Live Html Editor &nbsp&nbsp<i class="fa-solid fa-rectangle-terminal"></i></button></a>
+         <a href="/ds-avatar"> <button class="button-9">Get a discord avatar &nbsp&nbsp<i class="fa-solid fa-image"></i></i></button></a>
+        <a href="/ds-banner"> <button class="button-9">Get a discord banner  &nbsp&nbsp<i class="fa-solid fa-image"></i></button></a>
         
       </div>
 

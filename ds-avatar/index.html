@@ -11,40 +11,39 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
     .buttondownload{
-    display: none;
-    width: 180px;
+      display: none;
+      width: 130px;
       height: 40px;
-      background-color: rgb(71, 98, 221);
+	  margin-left: 10px;
+      background-color: rgb(110, 110, 110);
       border: 0px;
       border-radius: 5px;
       font-size: 17px;
       font-family: 'Source Sans Pro', sans-serif;
       color: #FFF;
-      box-shadow: 0px 0px 4px 0px #868686;
-      transition: .4s;
     }
     .buttondownload:hover{
-      opacity: 0.83;
-      box-shadow: 0px 0px 12px 0px #868686;
+      cursor: pointer;
     }
     body{
-    background-color: rgb(43, 43, 43);
+    background-color: #36393f;
     }
     .button{
-      width: 180px;
+      width: 130px;
       height: 40px;
-      background-color: rgb(71, 98, 221);
+	  margin-left: 10px;
+      background-color: rgb(110, 110, 110);
       border: 0px;
       border-radius: 5px;
       font-size: 17px;
       font-family: 'Source Sans Pro', sans-serif;
       color: #FFF;
-      box-shadow: 0px 0px 4px 0px #868686;
-      transition: .4s;
     }
     .button:hover{
-      opacity: 0.83;
-      box-shadow: 0px 0px 12px 0px #868686;
+      cursor: pointer;
+    }
+    a{
+      text-decoration: none;
     }
     .input1{
       width: 250px;
@@ -54,10 +53,11 @@
       border-radius: 5px;
       font-size: 17px;
       font-family: 'Source Sans Pro', sans-serif;
-      color: rgb(71, 98, 221);
+      color: rgb(134, 134, 134);
       box-shadow: 0px 0px 4px 0px #868686;
       transition: .4s;
       outline: none;
+	  text-align: center;
     }
     </style>
 </head>
@@ -68,25 +68,39 @@
 
     <input placeholder="User id..." id="useridxd" autocomplete="off" class="input1">  &nbsp &nbsp<button onclick="fetchimage()" class="button">Get avatar</button><br><br><br><br>
     <img id="useravatar" width="30%" height="auto" style="border-radius:8px;">
-    <br><br>
+    <br><br><br><br>
     <a id="downloadlink" href=""  target="_blank"><button id="buttondownload" class="buttondownload"> Download </button></a>
     </center>
     
     <script>
     
-    function fetchimage() {
+    async function fetchimage() {
       var userid = document.getElementById("useridxd").value;
       if(!userid) return;
-      
+      const apid = await fetch(`https://japi.rest/discord/v1/user/${userid}`).then(res => res.json()).catch(error => {
+    console.log(error.response)
+    return
+});
 
-        fetch(`https://japi.rest/discord/v1/user/${userid}/avatar?animated=true&size=4096`).then(response =>{ 
-            document.getElementById("useravatar").src = response.url 
-            document.getElementById("downloadlink").href = response.url
+          if(!apid){
+            document.getElementById("buttondownload").style.display = "none"
+            document.getElementById("useravatar").src = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`
+            return
+          }
+          if(!apid.data){
+            document.getElementById("buttondownload").style.display = "none"
+            document.getElementById("useravatar").src = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`
+            return
+          }
+          if(!apid.data.avatarURL){
+            document.getElementById("buttondownload").style.display = "none"
+            document.getElementById("useravatar").src = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`
+            return
+          }
+            document.getElementById("useravatar").src = apid.data.avatarURL || apid.data.defaultAvatarURL
+            document.getElementById("downloadlink").href = apid.data.avatarURL || apid.data.defaultAvatarURL
             document.getElementById("buttondownload").style.display = "inline"
 
-
-
-    })
 }
 
     
@@ -96,4 +110,3 @@
     </script>
 </body>
 </html>
-

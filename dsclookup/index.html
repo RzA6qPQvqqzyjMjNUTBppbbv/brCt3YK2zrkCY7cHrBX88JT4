@@ -72,7 +72,6 @@ textarea{
 .profilecard .me .username {
 	margin: 15px auto 15px auto;
 	text-align: center;
-	font-weigth: 100;
 	font-size: 24px;
 }
 
@@ -88,6 +87,7 @@ textarea{
 	  margin-left: 10px;
       background-color: rgb(110, 110, 110);
       border: 0px;
+	  animation: myAnim1 1s ease 0s 1 normal forwards;
       border-radius: 5px;
       font-size: 17px;
       font-family: 'Source Sans Pro', sans-serif;
@@ -100,6 +100,7 @@ textarea{
 	  margin-left: 10px;
       background-color: transparent;
       border: 1px;
+	  animation: myAnim1 1s ease 0s 1 normal forwards;
 	  border: 1px solid #8a8a8a;
 	  border-radius: 4px;
 	  padding: 8px;
@@ -115,6 +116,7 @@ textarea{
       height: 40px;
       background-color: #FFF;
       border: 0px;
+	  animation: myAnim1 1s ease 0s 1 normal forwards;
       border-radius: 5px;
       font-size: 17px;
       font-family: 'Source Sans Pro', sans-serif;
@@ -124,13 +126,24 @@ textarea{
       outline: none;
 	  text-align: center;
     }
+	@keyframes myAnim1 {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 </style>
 </head>
 <body>
 
 <center>
 	<br><br><br><br>
-	<input id="userid" class="input1" placeholder="Enter user id"><button class="button" onclick="fetchuser()">Enter</button>
+	<input id="userid" class="input1" placeholder="Enter any id..."><button class="button" onclick="fetchuser()">Enter</button>
     <div class="content" id="content">
 		<div class="profilecard" >
 			<div class="me">

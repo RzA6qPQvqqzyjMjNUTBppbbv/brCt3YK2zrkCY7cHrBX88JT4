@@ -30,8 +30,9 @@
     }
     .button{
       width: 130px;
+      animation: myAnim1 1s ease 0s 1 normal forwards;
       height: 40px;
-	  margin-left: 10px;
+	    margin-left: 10px;
       background-color: rgb(110, 110, 110);
       border: 0px;
       border-radius: 5px;
@@ -49,6 +50,7 @@
       width: 250px;
       height: 40px;
       background-color: #FFF;
+      animation: myAnim1 1s ease 0s 1 normal forwards;
       border: 0px;
       border-radius: 5px;
       font-size: 17px;
@@ -59,6 +61,17 @@
       outline: none;
 	  text-align: center;
     }
+    @keyframes myAnim1 {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
     </style>
 </head>
 <body>
@@ -66,7 +79,7 @@
     <br>
     <br>
 
-    <input placeholder="User id..." id="useridxd" autocomplete="off" class="input1">  &nbsp &nbsp<button onclick="fetchimage()" class="button">Get avatar</button><br><br><br><br>
+    <input placeholder="Enter any id..." id="useridxd" autocomplete="off" class="input1">  &nbsp &nbsp<button onclick="fetchimage()" class="button">Get avatar</button><br><br><br><br>
     <img id="useravatar" width="30%" height="auto" style="border-radius:8px;">
     <br><br><br><br>
     <a id="downloadlink" href=""  target="_blank"><button id="buttondownload" class="buttondownload"> Download </button></a>

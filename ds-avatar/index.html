@@ -1,6 +1,7 @@
 <html>
 <head>
   <script type="text/javascript" src="/function.js"></script>
+  <script type="text/javascript" src="index.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta content="Random Tools" property="og:title" />
     <meta content="Useful tools for smart people! 
@@ -88,42 +89,6 @@
     <br><br><br><br>
     <a id="downloadlink" href=""  target="_blank"><button id="buttondownload" class="buttondownload"> Download </button></a>
     </center>
-    
-    <script>
-    
-    async function fetchimage() {
-      var userid = document.getElementById("useridxd").value;
-      if(!userid) return;
-      const apid = await fetch(`https://japi.rest/discord/v1/user/${userid}`).then(res => res.json()).catch(error => {
-    console.log(error.response)
-    return
-});
 
-          if(!apid){
-            document.getElementById("buttondownload").style.display = "none"
-            document.getElementById("useravatar").src = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`
-            return
-          }
-          if(!apid.data){
-            document.getElementById("buttondownload").style.display = "none"
-            document.getElementById("useravatar").src = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`
-            return
-          }
-          if(!apid.data.avatarURL){
-            document.getElementById("buttondownload").style.display = "none"
-            document.getElementById("useravatar").src = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`
-            return
-          }
-            document.getElementById("useravatar").src = apid.data.avatarURL || apid.data.defaultAvatarURL
-            document.getElementById("downloadlink").href = apid.data.avatarURL || apid.data.defaultAvatarURL
-            document.getElementById("buttondownload").style.display = "inline"
-
-}
-
-    
-
-    
-    
-    </script>
 </body>
 </html>
